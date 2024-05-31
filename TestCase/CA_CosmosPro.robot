@@ -7,8 +7,9 @@ Resource     ../Resource/cy_keywords.robot
 
 *** Test Cases ***
 Login_and_Pair_Device
-   Lounch_Prod_App
-   Login_and_Verify_OTP
+#   Lounch_Prod_App
+#   Login_and_Verify_OTP
+   Launch Application
    CA_Cosmos_Pro_Pairing
    Sleep       10
 CA_Cosmos_Pro_Dashboard_Page
