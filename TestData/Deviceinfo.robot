@@ -138,4 +138,4 @@ ${Ultima_Prism_Watch_ID}          //android.widget.TextView[@text="PRISM_9D4E"]
 #JL Device Details
 ${JL_Sigma_Watch_Name}            Wave Sigma
 ${JL_Sigma_Watch_In_List}      //android.widget.TextView[@text="Wave Sigma"]
-${JL_Sigma_Watch_ID}          //android.widget.TextView[@text="SIGMA_918C"]
+${JL_Sigma_Watch_ID}          //android.widget.TextView[@text="SIGMA_C3EB"]

@@ -183,6 +183,7 @@ ${Add_Alarm_Button}       com.coveiot.android.boat:id/add_alarm_btn
 ${Alarm_Time_OK}           //android.widget.Button[@text="OK"]
 ${Save_Alarm_Button}       com.coveiot.android.boat:id/save_alarm_btn
 ${Max_Alarm_Toast}         //android.widget.Toast[@text="Maximum alarms allowed on watch is 5"]
+${enable_Quick_reply_toast}        //android.widget.Toast[@text="Enable quick reply to proceed"]
 
 
 

@@ -19,7 +19,7 @@ JL_Sigma_Settings_Page
     Goto_Settings_Page
     Sleep      10
 JL_Sigma_Features_Verification
-   Verify_opp3_Features
+   Verify_JL_sigma_Features
 JL_Sigma_Verify_HR_Feature
    Verify_Auto_HR_Features
 JL_Sigma_QR_feature
@@ -40,7 +40,7 @@ JL_Sigma_Verify_FindWatch_Feature
 JL_Sigma_Verify_Notification_Feature
    Verify_Notification_Feature
 JL_Sigma_Verify_Watch_Control_Features
-   CY_Watch_Control_Feature
+   JL_Watch_Control_Feature
 JL_Sigma_Fitness_Vitals_Page
    Fitness_Page_Vitals_Details
    Verify_Steps_Vitals
@@ -54,7 +54,7 @@ JL_Sigma_Fitness_Plan
     Fitness_Page_Fitness
 #    Fitness_Plan_Page
 JL_Sigma_My_Watch_Page
-    CA_Xtend/Storm/StormProCall_My_Watch_Page
+    JL_My_Watch_Page
 JL_Sigma_Profile_Page
     CA_Pro_Profile_Page
 JL_Sigma_Home_Page

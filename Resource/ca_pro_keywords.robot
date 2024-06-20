@@ -291,7 +291,7 @@ Verify_QR_Feature
     Wait Until Element Is Visible    ${qr_tray}    10
     Click Element    ${qr_tray}
     ${qr_exists}=   Run Keyword And Return Status    Wait Until Element Is Visible    ${Ok_button}     10
-    IF    '${qr_exists}=='True'
+    IF    '${qr_exists}' =='True'
          Click Element    ${Ok_button}
          Sleep    6
     END
@@ -332,13 +332,34 @@ SOS_feature
     Wait Until Element Is Visible    ${sos_feature}    10
     Click Element    ${sos_feature}
     sleep    3
-    ${element}=    Run Keyword And Return Status    Wait Until Element Is Visible    com.android.permissioncontroller:id/permission_allow_button    10
-    IF    'com.android.permissioncontroller:id/permission_allow_button'=='True'
-         Click Element    com.android.permissioncontroller:id/permission_allow_button
+    ${emergency_con} =     Run Keyword And Return Status    Wait Until Element Is Visible    com.coveiot.android.boat:id/btnAddEmergencyContact    10
+    IF    '${emergency_con}'=='True'
+         Click Element    com.coveiot.android.boat:id/btnAddEmergencyContact
+         ${element}=    Run Keyword And Return Status    Wait Until Element Is Visible    com.android.permissioncontroller:id/permission_allow_button    10
+         IF    '${element}'=='True'
+              Click Element    com.android.permissioncontroller:id/permission_allow_button
+         END
+         Input Text    com.coveiot.android.boat:id/search_src_text    john doe
+         Sleep    2
+         Wait Until Element Is Visible    com.coveiot.android.boat:id/ivContactSelect    10
+         Click Element    com.coveiot.android.boat:id/ivContactSelect
+         Wait Until Element Is Visible    com.coveiot.android.boat:id/btnSaveContact     5
+         Click Element    com.coveiot.android.boat:id/btnSaveContact
+         ${element}=    Run Keyword And Return Status    Wait Until Element Is Visible    com.android.permissioncontroller:id/permission_allow_button    10
+         IF    '${element}'=='True'
+              Click Element    com.android.permissioncontroller:id/permission_allow_button
+         END
+         Sleep    2
+         Click Element    com.coveiot.android.boat:id/negative_btn
+         Sleep    2
+         Click Element    ${Back_arrow}
     END
-    ${element}=    Run Keyword And Return Status    Wait Until Element Is Visible    com.android.permissioncontroller:id/permission_allow_button    10
-    IF    'com.android.permissioncontroller:id/permission_allow_button'=='True'
-         Click Element    com.android.permissioncontroller:id/permission_allow_button
+    ${element}=    Run Keyword And Return Status    Wait Until Element Is Visible    com.coveiot.android.boat:id/ivButton    10
+    IF    '${element}'=='True'
+         Click Element    com.coveiot.android.boat:id/ivButton
+         Sleep    3
+          Wait Until Page Contains Element             ${Back_arrow}        10
+          Click Element                        ${Back_arrow}
     END
 
 
@@ -565,6 +586,46 @@ CA_Xtend/Storm/StormProCall_My_Watch_Page
    Wait Until Page Contains Element        ${Activity700_text}      20
 #  Wait Until Page Contains Element         ${CosmosProwatch_feature}        20
 
+JL_My_Watch_Page
+   Wait Until Page Contains Element      ${MyWatch_Icon}     20
+   Click Element                         ${MyWatch_Icon}
+   #Wait Until Page Contains Element          ${watch_name_textin_mywatch_tab}     20
+   Wait Until Page Contains Element        ${BT_status_text}       20
+   #Element Should Contain Text      ${watch_name_text}      Cosmos Pro
+#   Element Should Be Visible          ${Cosmos_watchface}
+   Element Should Be Visible          ${BT_status_text}
+   Element Should Be Visible          ${Battery_status_text}
+   Element Should Be Visible         ${Sync_status_text}
+   Element Should Be Visible         ${BT_call_status_text}
+   Element Should Be Visible         com.coveiot.android.boat:id/clSOSettings
+
+   Wait Until Page Contains Element          ${watch_face_option}     20
+   Click Element         ${watch_face_option}
+   Wait Until Page Contains Element         ${Cloud_watch_option}     20
+   Wait Until Page Contains Element          ${Default_watch_option}    20
+   Wait Until Page Contains Element        ${Back_arrow}       20
+   Click Element                 ${Back_arrow}
+   Scroll    com.coveiot.android.boat:id/clSOSettings    ${watch_face_option}
+   Wait Until Page Contains Element          ${Watch_Settings_option1}          20
+   Click Element           ${Watch_Settings_option1}
+   Wait Until Page Contains Element         ${Watch_Settings_option1}        20
+   Click Element         ${MyWatch_Icon}
+   Sleep          8
+   Scroll           com.coveiot.android.boat:id/clSOSettings             ${BT_status_text}
+   Wait Until Page Contains Element         ${find_my_watch_text}        20
+   Click Element                            ${find_my_watch_text}
+   Wait Until Page Contains Element         ${find_my_watch_text1}        20
+   Wait Until Page Contains Element         ${Back_arrow}      20
+   Click Element                            ${Back_arrow}
+   Wait Until Page Contains Element         ${BT_calling_text_option}        20
+   Click Element                            ${BT_calling_text_option}
+   Wait Until Page Contains Element         ${Calling_text}        20
+   Wait Until Page Contains Element         ${Back_arrow}     20
+   Click Element                            ${Back_arrow}
+   Sleep        8
+   Scroll              ${BT_calling_text_option}            ${watch_face_option}
+   Wait Until Page Contains Element        ${Activity700_text}      20
+#  Wait Until Page Contains Element         ${CosmosProwatch_feature}        20
 CA_StormPro_Mywatch_page
    Wait Until Page Contains Element      ${MyWatch_Icon}     20
    Click Element                         ${MyWatch_Icon}

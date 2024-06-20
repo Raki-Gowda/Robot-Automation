@@ -316,6 +316,97 @@ CY_Watch_Control_Feature
     #Wait Until Page Contains Element          ${Xtend_pro_watch_name}      20
     Wait Until Page Contains Element         ${Back_arrow}     20
     Click Element       ${Back_arrow}
+JL_Watch_Control_Feature
+    Wait Until Page Contains Element         ${Watch_control_feature}         20
+    Click Element        ${Watch_control_feature}
+    Wait Until Page Contains Element        ${DND_feature}    20
+    Click Element          ${DND_feature}
+    Wait Until Page Contains Element      ${Enable/Disable_DND}    20
+    Click Element              ${Enable/Disable_DND}
+    Wait Until Page Contains Element       ${Save_button}   20
+    Click Element            ${Save_button}
+    Wait Until Page Contains Element          ${Ok_button}    20
+    Click Element                            ${Ok_button}
+    Wait Until Page Contains Element          ${Quick_Reply_feature}      20
+    Click Element                  ${Quick_Reply_feature}
+    Wait Until Page Contains Element         ${Enable/Disable_QuickReply}   20
+    Click Element              ${Enable/Disable_QuickReply}
+    ${element}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Done_buttton}    10
+    IF    '${element}'=='True'
+        Wait Until Page Contains Element        ${Done_buttton}   20
+        Click Element           ${Done_buttton}
+        Wait Until Page Contains Element        ${Ok_button}     20
+        Click Element              ${Ok_button}
+        Wait Until Page Contains Element         ${SMS_permission}   20
+        Click Element        ${SMS_permission}
+        Wait Until Page Contains Element       ${Call_logs_text}          20
+        Scroll         ${SMS_Notification_text}          ${Call_logs_text}
+        Wait Until Page Contains Element        ${SMS_Text}      20
+        Click Element      ${SMS_Text}
+        Wait Until Page Contains Element            ${Allow_radio_button}       20
+        Click Element          ${Allow_radio_button}
+        Wait Until Page Contains Element       ${Navigate_back}       20
+        Click Element         ${Navigate_back}
+        Wait Until Page Contains Element         ${Navigate_back}      20
+        Click Element            ${Navigate_back}
+        Wait Until Page Contains Element          ${Navigate_back}      20
+        Click Element               ${Navigate_back}
+        Wait Until Page Contains Element          ${Enable/Disable_QuickReply}      20
+        Click Element             ${Enable/Disable_QuickReply}
+    END
+    Wait Until Page Contains Element        ${Manage_quick_reply_option}        20
+    Click Element           ${Manage_quick_reply_option}
+    ${ElementVisible}=     Run Keyword And Return Status       Wait Until Page Contains Element        ${enable_Quick_reply_toast}        10
+    IF   '${ElementVisible}' == 'True'
+        Wait Until Element Is Visible    com.coveiot.android.boat:id/saveBtn    10
+        Click Element    com.coveiot.android.boat:id/saveBtn
+        Wait Until Page Contains Element       com.coveiot.android.boat:id/saveBtn      10
+        Click Element        com.coveiot.android.boat:id/saveBtn
+    ELSE
+        Sleep    5
+        Wait Until Page Contains Element            ${Busy_text}    20
+        Element Should Be Visible         ${Driving_text}
+        Element Should Be Visible         ${Unable_text}
+        Element Should Be Visible         ${At_work_text}
+        Element Should Be Visible          ${Sleeping_text}
+        Wait Until Page Contains Element         ${Back_arrow}     20
+        Click Element               ${Back_arrow}
+        Wait Until Page Contains Element         ${Back_arrow}      20
+        Click Element              ${Back_arrow}
+        Wait Until Page Contains Element        ${Quick_reply_Discard_Save}      20
+        Click Element        ${Quick_reply_Discard_Save}
+    END
+#    Wait Until Page Contains Element         ${Back_arrow}      20
+#    Click Element              ${Back_arrow}
+#    Wait Until Page Contains Element        ${Quick_reply_Discard_Save}      20
+#    Click Element        ${Quick_reply_Discard_Save}
+    Wait Until Page Contains Element        ${Lift_View_Arrow}     20
+    Click Element          ${Lift_View_Arrow}
+    Wait Until Page Contains Element       ${Enable/Disable_Lift_View}       20
+    Click Element       ${Enable/Disable_Lift_View}
+    Wait Until Page Contains Element     ${Save_button}     20
+    Click Element    ${Save_button}
+    Wait Until Page Contains Element        ${Ok_button}      20
+    Click Element           ${Ok_button}
+    Wait Until Page Contains Element          ${Distnace_unit_text}      20
+    Click Element          ${Distnace_unit_text}
+    Wait Until Page Contains Element        ${OK_popup}      20
+    Click Element           ${OK_popup}
+    Wait Until Page Contains Element         ${Ok_button}    20
+    Click Element          ${Ok_button}
+    Wait Until Page Contains Element         ${Select_HR}   20
+    Click Element           ${Select_HR}
+    Wait Until Page Contains Element        ${OK_popup}       20
+    Click Element          ${OK_popup}
+    Wait Until Page Contains Element         ${Ok_button}    20
+    Click Element        ${Ok_button}
+    Wait Until Page Contains Element      ${Back_arrow}     20
+    Click Element      ${Back_arrow}
+    Wait Until Page Contains Element         ${About_watch}     20
+    Click Element        ${About_watch}
+    #Wait Until Page Contains Element          ${Xtend_pro_watch_name}      20
+    Wait Until Page Contains Element         ${Back_arrow}     20
+    Click Element       ${Back_arrow}
 
 CY_Home_Page_Verification
     Wait Until Page Contains Element     ${Home_Icon}    20
