@@ -7,6 +7,8 @@ Resource     ../Resource/ulc_keywords.robot
 
 *** Test Cases ***
 Login_and_Pair_Device
+#    Lounch_Prod_App
+#    Login_and_Verify_OTP
     Launch_Prod_App_from_pair
     ULC_Lynk_Voice_Pairing
     Sleep       10

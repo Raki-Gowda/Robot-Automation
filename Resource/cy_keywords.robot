@@ -427,12 +427,15 @@ CY_Home_Page_Verification
     Sleep    1
     Wait Until Element Is Visible    ${WFS_save}    20
     Click Element    ${WFS_save}
-    Sleep    1
-    Wait Until Element Is Visible    ${WFS_Apply}   20
-    Click Element    ${WFS_Apply}
-    Sleep    30
-    Wait Until Element Is Visible     ${Ok_button}     30
-    Click Element    ${Ok_button}
+    Sleep    5
+    ${visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${WFS_Apply}    20
+    IF  '${visible}'=='True'
+        Click Element    ${WFS_Apply}
+        Sleep    30
+        Wait Until Element Is Visible     ${Ok_button}     30
+        Click Element    ${Ok_button}
+    END
+
     ${ele} =    Run Keyword And Return Status    Wait Until Element Is Visible    ${feedback_popup_close}    10
     IF    '${ele}'=='True'
         Click Element    ${feedback_popup_close}

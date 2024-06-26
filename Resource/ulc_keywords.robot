@@ -7,8 +7,6 @@ Resource     ../Resource/keywords.robot
 
 *** Keywords ***
 ULC_WavePlay_Pairing
-    Wait Until Page Contains Element   ${System_Persmission1}           30
-    Click Element     ${System_Persmission1}
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Wave Play
     Wait Until Page Contains Element       ${WavePlay_Watch_In_List}         20
@@ -20,14 +18,12 @@ ULC_WavePlay_Pairing
     ULC_Wave_Play_Try_Agian_Pairing
     Wait Until Page Contains Element    ${Get_Started_button}        30
     Click Element         ${Get_Started_button}
-    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   40
     IF    '${element_visible}'=='True'
         Click Element    ${Contiue_HomePage_button}
     END
 
 ULC_WaveBeat_Pairing
-    Wait Until Page Contains Element   ${System_Persmission1}           30
-    Click Element     ${System_Persmission1}
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Wave Beat
     Wait Until Page Contains Element       ${WaveBeat_Watch_In_List}         20
@@ -40,14 +36,12 @@ ULC_WaveBeat_Pairing
     ULC_Wave_Beat_Try_Agian_Pairing
     Wait Until Page Contains Element    ${Get_Started_button}        30
     Click Element         ${Get_Started_button}
-    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   40
     IF    '${element_visible}'=='True'
         Click Element    ${Contiue_HomePage_button}
     END
 
 ULC_WaveStyle_Pairing
-    Wait Until Page Contains Element   ${System_Persmission1}           30
-    Click Element     ${System_Persmission1}
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Wave Style
     Wait Until Page Contains Element       ${WaveStyle_Watch_In_List}         20
@@ -60,7 +54,7 @@ ULC_WaveStyle_Pairing
     Sleep    3
     Wait Until Page Contains Element    ${Get_Started_button}        30
     Click Element         ${Get_Started_button}
-    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   40
     IF    '${element_visible}'=='True'
         Click Element    ${Contiue_HomePage_button}
     END
@@ -80,14 +74,12 @@ ULC_Wave_Beat_Call_Pairing
     BT_Pair_Pop_UP
     Wait Until Page Contains Element    ${Get_Started_button}        30
     Click Element         ${Get_Started_button}
-    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   40
     IF    '${element_visible}'=='True'
         Click Element    ${Contiue_HomePage_button}
     END
 
 ULC_Wave_Style_Call_Pairing
-    Wait Until Page Contains Element   ${System_Persmission1}           30
-    Click Element     ${System_Persmission1}
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Wave Style Call
     Wait Until Page Contains Element      ${Wave_Style_Call_Watch_In_List}      20
@@ -102,14 +94,12 @@ ULC_Wave_Style_Call_Pairing
     BT_Pair_Pop_UP
     Wait Until Page Contains Element    ${Get_Started_button}        30
     Click Element         ${Get_Started_button}
-    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   40
     IF    '${element_visible}'=='True'
          Click Element    ${Contiue_HomePage_button}
     END
 
 ULC_Wave_Smart_Call_Pairing
-    Wait Until Page Contains Element   ${System_Persmission1}           30
-    Click Element     ${System_Persmission1}
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Wave Smart Call
     Wait Until Page Contains Element      ${Wave_Smart_Call_Watch_In_List}     20
@@ -124,15 +114,13 @@ ULC_Wave_Smart_Call_Pairing
     BT_Pair_Pop_UP
     Wait Until Page Contains Element    ${Get_Started_button}        30
     Click Element         ${Get_Started_button}
-    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   40
     IF    '${element_visible}'=='True'
         Click Element    ${Contiue_HomePage_button}
     END
 
 
 ULC_Lynk_Voice_Pairing
-    Wait Until Page Contains Element   ${System_Persmission1}           30
-    Click Element     ${System_Persmission1}
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Wave Lynk Voice
     Wait Until Page Contains Element      ${Wave_Lynk_Voice_Watch_In_List}     20
@@ -147,15 +135,13 @@ ULC_Lynk_Voice_Pairing
     BT_Pair_Pop_UP
     Wait Until Page Contains Element    ${Get_Started_button}        30
     Click Element         ${Get_Started_button}
-    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   40
     IF    '${element_visible}'=='True'
         Click Element    ${Contiue_HomePage_button}
     END
 
 
 ULC5BT_Ultima_Call_Pairing
-    Wait Until Page Contains Element   ${System_Persmission1}           30
-    Click Element     ${System_Persmission1}
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Ultima Call
     Wait Until Page Contains Element      ${ULC5BT_Ultima_Call_Watch_In_List}    20

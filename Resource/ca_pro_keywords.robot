@@ -142,8 +142,6 @@ Verify_CA_StormPro_Features
 
 CA_Pro_Landing_Page
   # Dashboard
-    Weekly_Report_Subscription
-    Dashboard_Skip_Notification_Settings_Feature
     Wait Until Page Contains Element    ${Home_Icon}           30
     Wait Until Page Contains Element     ${Fitness_Icon}       20
     Wait Until Page Contains Element    ${MyWatch_Icon}        20
@@ -156,6 +154,8 @@ CA_Pro_Landing_Page
     Wait Until Page Contains Element     ${Watch_Image}     20
     #Element Should Be Visible     ${Battery_Icon}
     Wait Until Page Contains Element     ${Setup_your_Watch_text}
+    Weekly_Report_Subscription
+    Dashboard_Skip_Notification_Settings_Feature
 
 
 

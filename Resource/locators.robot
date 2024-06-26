@@ -97,7 +97,7 @@ ${Connected_text}              //android.widget.TextView[@text="Connected"]
 ${Watch_Status_Text}          com.coveiot.android.boat:id/watch_status
 ${Watch_Disconnect_Text}       com.coveiot.android.boat:id/disconnect
 ${WFS_save}                   //android.widget.Button[@text="Save"]
-${WFS_Apply}                 //android.widget.Button[@text="Apply now"]
+${WFS_Apply}                 //android.widget.Button[@text="Apply Now"]
 ${Watch_feature_text}          //android.widget.TextView[@text="Watch features"]
 
 #Custom_reminder

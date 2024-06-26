@@ -70,7 +70,7 @@ ${Wave_Style_Call_watch_ID}         //android.widget.TextView[@text="STYLECALL_D
 #ULC Wave Smart Call Device Details
 ${WaveSmartCall_Watch_Name}       Wave Smart Call
 ${Wave_Smart_Call_Watch_In_List}     //android.widget.TextView[@text="Wave Smart Call"]
-${Wave_Smart_Call_watch_ID}         //android.widget.TextView[@text="SMARTCALL_D20A"]
+${Wave_Smart_Call_watch_ID}         //android.widget.TextView[@text="SMARTCALL_1B9D"]
 
 #ULC Wave Lynk Voice Device Details
 ${WaveLynkVoice_Watch_Name}       Wave Smart Call
@@ -138,4 +138,4 @@ ${Ultima_Prism_Watch_ID}          //android.widget.TextView[@text="PRISM_9D4E"]
 #JL Device Details
 ${JL_Sigma_Watch_Name}            Wave Sigma
 ${JL_Sigma_Watch_In_List}      //android.widget.TextView[@text="Wave Sigma"]
-${JL_Sigma_Watch_ID}          //android.widget.TextView[@text="SIGMA_C3EB"]
+${JL_Sigma_Watch_ID}          //android.widget.TextView[@text="SIGMA_918C"]
