@@ -5,7 +5,7 @@ Resource     ../Resource/locators.robot
 *** Keywords ***
 
 Lounch_Prod_App
-    Open Application           http://localhost:4723/wd/hub    platformName=Android      deviceName=RZCTC0W9DNN     appPackage=com.coveiot.android.boat       appActivity=com.coveiot.android.leonardo.onboarding.splash.activities.ActivitySplash      automationName=Uiautomator2
+    Open Application           http://localhost:4723/wd/hub    platformName=Android      deviceName=078873125E123237     appPackage=com.coveiot.android.boat       appActivity=com.coveiot.android.leonardo.onboarding.splash.activities.ActivitySplash      automationName=Uiautomator2
     Wait Until Page Contains Element     ${Skip_button}     30
 Launch_Prod_App_from_pair
     Open Application           http://localhost:4723/wd/hub    platformName=Android      deviceName=RZCTC0W9DNN     appPackage=com.coveiot.android.boat       appActivity=com.coveiot.android.leonardo.onboarding.splash.activities.ActivitySplash      automationName=Uiautomator2    noReset=true    fullReset=false
