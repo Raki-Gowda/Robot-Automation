@@ -70,7 +70,7 @@ ${Wave_Style_Call_watch_ID}         //android.widget.TextView[@text="STYLECALL_D
 #ULC Wave Smart Call Device Details
 ${WaveSmartCall_Watch_Name}       Wave Smart Call
 ${Wave_Smart_Call_Watch_In_List}     //android.widget.TextView[@text="Wave Smart Call"]
-${Wave_Smart_Call_watch_ID}         //android.widget.TextView[@text="SMARTCALL_1B9D"]
+${Wave_Smart_Call_watch_ID}         //android.widget.TextView[@text="SMARTCALL_D20A"]
 
 #ULC Wave Lynk Voice Device Details
 ${WaveLynkVoice_Watch_Name}       Wave Smart Call
@@ -88,6 +88,10 @@ ${Lunar_Call_Watch_Name}            Lunar Call
 ${Lunar_Call_Watch_In_List}     //android.widget.TextView[@text="Lunar Call"]
 ${Lunar_Call_watch_ID}         //android.widget.TextView[@text="LUNARCALL_E770"]
 
+${spectra_Watch_Name}            Lunar Call
+${spectra_Watch_In_List}     //android.widget.TextView[@text="Wave Spectra"]
+${spectra_watch_ID}         //android.widget.TextView[@text="SPECTRA_9544"]
+
 #Touch ELX Wave Connect Plus Device Details
 ${Wave_Connect_Plus_Watch_Name}            Wave Connect Plus
 ${Wave_Connect_Plus_Watch_In_List}     //android.widget.TextView[@text="Wave Connect Plus"]
@@ -96,7 +100,7 @@ ${Wave_Connect_Plus_watch_ID}         //android.widget.TextView[@text="CONNECTPL
 #Touch ELX Lunar Connect Plus Device Details
 ${Lunar_Connect_Plus_Watch_Name}            Lunar Connect Plus
 ${Lunar_Connect_Plus_Watch_In_List}     //android.widget.TextView[@text="Lunar Connect Plus"]
-${Lunar_Connect_Plus_watch_ID}         //android.widget.TextView[@text="LCONNECTPLUS_D624"]
+${Lunar_Connect_Plus_watch_ID}         //android.widget.TextView[@text="LCONNECTPLUS_C725"]
 
 #Touch ELX Storm Connect Plus Device Details
 ${Storm_Connect_Plus_Watch_Name}            Storm Connect Plus
@@ -128,7 +132,7 @@ ${Lunar_Call_Pro_Watch_ID}          //android.widget.TextView[@text="LCALLPRO_85
 #CY-1 Device Details
 ${Wave_Primia_Talk_Watch_Name}            Wave Primia Talk
 ${Wave_Primia_Talk_Watch_In_List}      //android.widget.TextView[@text="Wave Primia Talk"]
-${Wave_Primia_Talk_Watch_ID}          //android.widget.TextView[@text="PRIMIATALK_C740"]
+${Wave_Primia_Talk_Watch_ID}          //android.widget.TextView[@text="PRIMIATALK_C754"]
 
 #Opp3 Device Details
 ${Ultima_Prism_Watch_Name}            Ultima Prism

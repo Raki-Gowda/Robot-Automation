@@ -344,7 +344,7 @@ ${Cult_fit_headder}            com.coveiot.android.boat:id/tvCultFitHeader
 
 #Profile
 ${User_Name}             com.coveiot.android.boat:id/tv_name
-${Contact_Number}        //android.widget.TextView[@text="+917829190451"]
+${Contact_Number}        //android.widget.TextView[@text="+919108271345"]
 ${View_Profile_Option}    com.coveiot.android.boat:id/tv_view_profile
 ${My_Goals_Headder}               com.coveiot.android.boat:id/tv_my_goals
 ${Steps_Goal_Text}        //android.widget.TextView[@text="Steps"]

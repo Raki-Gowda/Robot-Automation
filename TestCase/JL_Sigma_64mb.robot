@@ -12,7 +12,7 @@ Login_and_Pair_Device
 #    Login_and_Verify_OTP
     Launch_Prod_App_from_pair
     JL_Sigma_pairing
-    Sleep    10
+    Sleep    20
 JL_Sigma_Dashboard_Page
     CY_Landing_Page
 JL_Sigma_Settings_Page
@@ -31,8 +31,6 @@ JL_Sigma_Verify_Reminder_Feature
    Sleep     4
 JL_Sigma_Verify_Nudge_Feature
    Verify_Nudges_Feature
-JL_Sigma_Verify_SOS_feature
-   SOS_feature
 JL_Sigma_Verify_BTCall_Feature
    Verify_BT_Calling_Feature
 JL_Sigma_Verify_FindWatch_Feature
@@ -41,6 +39,8 @@ JL_Sigma_Verify_Notification_Feature
    Verify_Notification_Feature
 JL_Sigma_Verify_Watch_Control_Features
    JL_Watch_Control_Feature
+JL_Sigma_Verify_SOS_feature
+   SOS_feature
 JL_Sigma_Fitness_Vitals_Page
    Fitness_Page_Vitals_Details
    Verify_Steps_Vitals

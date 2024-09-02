@@ -8,8 +8,9 @@ Resource     ../Resource/estapex_keywords.robot
 
 *** Test Cases ***
 Login_and_Pair_Device
-    Lounch_Prod_App
-    Login_and_Verify_OTP
+#    Lounch_Prod_App
+#    Login_and_Verify_OTP
+    Launch_Prod_App_from_pair
     Touch_ELX_Lunar_Connect_Plus_Pairing
     Sleep       10
 TouchELX_Lunar_Connect_Plus_Dashboard_Page

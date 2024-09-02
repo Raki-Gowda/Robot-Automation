@@ -53,10 +53,6 @@ Ultima_prism_Pairing
     END
 
 JL_Sigma_pairing
-       ${ele}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${System_Persmission1}    10
-    IF    '${ele}'=='True'
-          Click Element    ${System_Persmission1}
-    END
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Wave Sigma
     Wait Until Page Contains Element       ${JL_Sigma_Watch_In_List}       40
@@ -67,12 +63,13 @@ JL_Sigma_pairing
     Click Element    com.coveiot.android.boat:id/scanQR
     Wait Until Page Contains Element     ${JL_Sigma_Watch_ID}          40
     Click Element       ${JL_Sigma_Watch_ID}
-    Ultima_Prism_Try_Again_Pairing
+    Opp5_jeili_Try_Again_Pairing
     Sleep    3
     BT_Pair_Pop_UP
     Wait Until Page Contains Element    ${Get_Started_button}        40
     Click Element         ${Get_Started_button}
-     ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    Sleep    10
+     ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   20
     IF    '${element_visible}'=='True'
         Click Element    ${Contiue_HomePage_button}
     END
@@ -111,6 +108,14 @@ Ultima_Prism_Try_Again_Pairing
        Click Element       ${Ultima_Prism_Watch_ID}
     END
 
+Opp5_jeili_Try_Again_Pairing
+   ${ElementVisible}=     Run Keyword And Return Status       Wait Until Page Contains Element        ${Try_Agian_For_Pair}           10
+    IF   '${ElementVisible}' == 'True'
+       Click Element      ${Try_Agian_For_Pair}
+       Wait Until Page Contains Element      ${JL_Sigma_Watch_ID}        20
+       Click Element       ${JL_Sigma_Watch_ID}
+    END
+
 
 CY_LunarCallPro_Search_Again_Pairing
    ${ElementVisible}=     Run Keyword And Return Status       Wait Until Page Contains Element        ${Search_Again_Pair}          10
@@ -139,7 +144,7 @@ CY_WavePrimiaTalk_Search_Again_Pairing
 
 CY_Landing_Page
   # Dashboard
-    Wait Until Page Contains Element    ${Home_Icon}           30
+    Wait Until Page Contains Element    ${Home_Icon}           50
     Wait Until Page Contains Element     ${Home_Icon}
     Wait Until Page Contains Element    ${Fitness_Icon}
     Wait Until Page Contains Element    ${MyWatch_Icon}

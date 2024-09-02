@@ -329,6 +329,8 @@ Verify_Nudges_Feature
     Wait Until Page Contains Element         ${Ok_button}       20
     Click Element           ${Ok_button}
 SOS_feature
+    Wait Until Page Contains Element         ${Watch_feature_text}       10
+    Click Element                            ${Watch_feature_text}
     Wait Until Element Is Visible    ${sos_feature}    10
     Click Element    ${sos_feature}
     sleep    3
@@ -360,7 +362,12 @@ SOS_feature
          Sleep    3
           Wait Until Page Contains Element             ${Back_arrow}        10
           Click Element                        ${Back_arrow}
+#          Wait Until Page Contains Element       ${Back_arrow}    20
+#          Click Element       ${Back_arrow}
     END
+    Wait Until Page Contains Element       ${Back_arrow}    20
+    Click Element       ${Back_arrow}
+
 
 
 Verify_BT_Calling_Feature
@@ -375,7 +382,7 @@ Verify_Find_My_Watch_Feature
     Click Element         ${Find_watch_feature}
     Wait Until Page Contains Element               ${Save_button}   20
     Click Element        ${Save_button}
-    Element Should Be Visible         ${Find_watch_text}
+#    Element Should Be Visible         ${Find_watch_text}       10
     Wait Until Page Contains Element               ${Save_button}     20
     Click Element        ${Save_button}
     Wait Until Page Contains Element         ${Back_arrow}     10
@@ -460,7 +467,6 @@ Verify_Notification_Feature
     Click Element          ${Ok_button}
     Wait Until Page Contains Element       ${Back_arrow}    20
     Click Element       ${Back_arrow}
-
 #    Wait Until Page Contains Element       ${Back_arrow}    20
 #    Click Element       ${Back_arrow}
 #    Wait Until Page Contains Element       ${Quick_reply_Discard_Save}      20

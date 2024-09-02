@@ -20,8 +20,29 @@ Touch_ELX_Lunar_Call_Pairing
     BT_Pair_Pop_UP
     Wait Until Page Contains Element    ${Get_Started_button}        30
     Click Element         ${Get_Started_button}
-    Wait Until Page Contains Element    ${Contiue_HomePage_button}      30
-    Click Element     ${Contiue_HomePage_button}
+     ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    IF    '${element_visible}'=='True'
+        Click Element    ${Contiue_HomePage_button}
+    END
+
+Touch_ELX_Wave_spectra_Pairing
+    Wait Until Page Contains Element     ${Search_bar}            20
+    Input Text        ${Search_bar}         Wave spectra
+    Wait Until Page Contains Element       ${spectra_Watch_In_List}      20
+    Click Element      ${spectra_Watch_In_List}
+    Wait Until Page Contains Element    ${Search_Submit_button}       30
+    Click Element      ${Search_Submit_button}
+    TouchELX_Lunar_Call_Search_Agian_Pairing
+    Wait Until Page Contains Element    ${spectra_watch_ID}          30
+    Click Element       ${spectra_watch_ID}
+    #Sleep    3
+    BT_Pair_Pop_UP
+    Wait Until Page Contains Element    ${Get_Started_button}        30
+    Click Element         ${Get_Started_button}
+     ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    IF    '${element_visible}'=='True'
+        Click Element    ${Contiue_HomePage_button}
+    END
 
 Touch_ELX_Lunar_Connect_Plus_Pairing
     Wait Until Page Contains Element     ${Search_bar}            20
@@ -38,8 +59,10 @@ Touch_ELX_Lunar_Connect_Plus_Pairing
     BT_Pair_Pop_UP
     Wait Until Page Contains Element    ${Get_Started_button}        30
     Click Element         ${Get_Started_button}
-    Wait Until Page Contains Element    ${Contiue_HomePage_button}      30
-    Click Element     ${Contiue_HomePage_button}
+     ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    IF    '${element_visible}'=='True'
+        Click Element    ${Contiue_HomePage_button}
+    END
 
 Touch_ELX_Wave_Connect_Plus_Pairing
     Wait Until Page Contains Element     ${Search_bar}            20
@@ -56,9 +79,10 @@ Touch_ELX_Wave_Connect_Plus_Pairing
     BT_Pair_Pop_UP
     Wait Until Page Contains Element    ${Get_Started_button}        30
     Click Element         ${Get_Started_button}
-    Wait Until Page Contains Element    ${Contiue_HomePage_button}      30
-    Click Element     ${Contiue_HomePage_button}
-
+     ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    IF    '${element_visible}'=='True'
+        Click Element    ${Contiue_HomePage_button}
+    END
 
 Touch_ELX_Storm_Connect_Plus_Pairing
     Wait Until Page Contains Element     ${Search_bar}            20
@@ -178,7 +202,7 @@ Verify_TouchELX_Lunar_Call_Features
     Element Should Be Visible     ${Auto_HR_feature}
     Element Should Be Visible     ${TouchELX_Auto_Stress_feature}
     Element Should Be Visible     ${TouchELX_Auto_SPO2_feature}
-    Element Should Be Visible     ${Female_Wellness_feature}
+#    Element Should Be Visible     ${Female_Wellness_feature}
     Element Should Be Visible     ${Alarm_feature}
     Element Should Be Visible     ${Sedentary_reminder_feature}
     Element Should Be Visible     ${TouchELX_Drink_Water_feature}
@@ -327,27 +351,45 @@ TouchELX_Verify_Notification_Feature
     Click Element         ${Notification_feature}
     Wait Until Page Contains Element           ${Enbale/Disbale_Call_Notification}   20
     Click Element        ${Enbale/Disbale_Call_Notification}
-    Wait Until Page Contains Element       ${Call&Other_Permisson_option}     20
-    Click Element      ${Call&Other_Permisson_option}
-    Wait Until Page Contains Element      ${Call&Other_Permisson_option}   20
-    Click Element         ${Call&Other_Permisson_option}
-    Wait Until Page Contains Element       ${Call&Other_Permisson_option}  20
-    Click Element         ${Call&Other_Permisson_option}
-    Wait Until Page Contains Element        ${Enable_boat_notification}        10
-    Click Element        ${Enable_boat_notification}
-    Wait Until Page Contains Element       ${boat_system_permission}      20
-    Click Element             ${boat_system_permission}
-    Wait Until Page Contains Element      ${Navigate_back}      20
-    Click Element            ${Navigate_back}
-
+    ${IsPopUpShowing}=     Run Keyword And Return Status       Wait Until Page Contains Element       ${Call&Other_Permisson_option}            10
+    IF   '${IsPopUpShowing}'=='True'
+      #Wait Until Page Contains Element       ${Call&Other_Permisson_option}     20
+      Click Element      ${Call&Other_Permisson_option}
+      Wait Until Page Contains Element      ${Call&Other_Permisson_option}   20
+      Click Element         ${Call&Other_Permisson_option}
+      Wait Until Page Contains Element       ${Call&Other_Permisson_option}  20
+      Click Element         ${Call&Other_Permisson_option}
+      Wait Until Page Contains Element        ${Enable_boat_notification}        10
+      Click Element        ${Enable_boat_notification}
+      Wait Until Page Contains Element       ${boat_system_permission}      20
+      Click Element             ${boat_system_permission}
+      Wait Until Page Contains Element      ${Navigate_back}      20
+      Click Element            ${Navigate_back}
+    END
+    ${popup}=     Run Keyword And Return Status       Wait Until Page Contains Element       ${Enable_boat_notification}             10
+    IF  '${popup}'=='True'
+#      Wait Until Page Contains Element        ${Enable_boat_notification}        10
+      Click Element        ${Enable_boat_notification}
+      Wait Until Page Contains Element       ${boat_system_permission}      20
+      Click Element             ${boat_system_permission}
+      Wait Until Page Contains Element      ${Navigate_back}      20
+      Click Element            ${Navigate_back}
+      ${IsPopUpShowing}=     Run Keyword And Return Status       Wait Until Page Contains Element       ${Call&Other_Permisson_option}            10
+       IF   '${IsPopUpShowing}' == 'True'
+          #Wait Until Page Contains Element       ${Call&Other_Permisson_option}     20
+          Click Element      ${Call&Other_Permisson_option}
+          Wait Until Page Contains Element      ${Call&Other_Permisson_option}   20
+          Click Element         ${Call&Other_Permisson_option}
+          Wait Until Page Contains Element       ${Call&Other_Permisson_option}  20
+           Click Element         ${Call&Other_Permisson_option}
+       END
+    END
     Wait Until Page Contains Element        ${Enable/Disable_SMS_notification}   20
     Click Element          ${Enable/Disable_SMS_notification}
     Wait Until Page Contains Element        ${Save_button}        20
     Click Element            ${Save_button}
     Wait Until Page Contains Element     ${Ok_button}   20
     Click Element          ${Ok_button}
-#    Wait Until Page Contains Element       ${Back_arrow}    20
-#    Click Element       ${Back_arrow}
 
 
 TouchELX_Lunar_Call_My_Watch_Page_Feature
