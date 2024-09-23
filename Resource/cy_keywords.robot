@@ -52,6 +52,33 @@ Ultima_prism_Pairing
         Click Element    ${Contiue_HomePage_button}
     END
 
+SC3+_Pairing
+    ${ele}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${System_Persmission1}    10
+    IF    '${ele}'=='True'
+          Click Element    ${System_Persmission1}
+    END
+    Wait Until Page Contains Element     ${Search_bar}            20
+    Input Text        ${Search_bar}         Storm Call 3 PLus
+    Wait Until Page Contains Element       ${SC3+_Watch_In_List}       40
+    Click Element     ${SC3+_Watch_In_List}
+    Wait Until Page Contains Element    ${Search_Submit_button}       40
+    Click Element      ${Search_Submit_button}
+    Wait Until Element Is Visible    com.coveiot.android.boat:id/scanQR    10
+    Click Element    com.coveiot.android.boat:id/scanQR
+    Wait Until Page Contains Element     ${SC3+_Watch_ID}          40
+    Click Element       ${SC3+_Watch_ID}
+    sleep    5
+    SC3+_Try_Again_Pairing
+    Sleep    3
+    BT_Pair_Pop_UP
+    Wait Until Page Contains Element    ${Get_Started_button}        40
+    Click Element         ${Get_Started_button}
+    sleep    5
+     ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   40
+    IF    '${element_visible}'=='True'
+        Click Element    ${Contiue_HomePage_button}
+    END
+
 JL_Sigma_pairing
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Wave Sigma
@@ -106,6 +133,14 @@ Ultima_Prism_Try_Again_Pairing
        Click Element      ${Try_Agian_For_Pair}
        Wait Until Page Contains Element      ${Ultima_Prism_Watch_ID}        20
        Click Element       ${Ultima_Prism_Watch_ID}
+    END
+
+SC3+_Try_Again_Pairing
+   ${ElementVisible}=     Run Keyword And Return Status       Wait Until Page Contains Element        ${Try_Agian_For_Pair}           10
+    IF   '${ElementVisible}' == 'True'
+       Click Element      ${Try_Agian_For_Pair}
+       Wait Until Page Contains Element      ${SC3+_Watch_ID}        20
+       Click Element       ${SC3+_Watch_ID}
     END
 
 Opp5_jeili_Try_Again_Pairing
@@ -194,6 +229,23 @@ Verify_opp3_Features
     Element Should Be Visible     ${Weather_feature}
     Element Should Be Visible     ${Notification_feature}
 
+Verify_SC3+_Features
+    Wait Until Page Contains Element          ${Auto_HR_feature}      20
+    Element Should Be Visible     ${Auto_HR_feature}
+#    Element Should Be Visible     ${Female_Wellness_feature}
+    Element Should Be Visible     ${Alarm_feature}
+    Element Should Be Visible     ${qr_tray}
+    Scroll          ${Sedentary_reminder_feature}           ${Auto_HR_feature}
+    Element Should Be Visible     ${Sedentary_reminder_feature}
+    Element Should Be Visible    ${sos_feature}
+    Element Should Be Visible     ${Nudges_feature}
+    Element Should Be Visible     ${BT_calling__feature}
+    Element Should Be Visible     ${Find_watch_feature}
+#    Element Should Be Visible     ${Weather_feature}
+    Element Should Be Visible     ${Notification_feature}
+    Element Should Be Visible    ${Navigation}
+
+
 Verify_JL_sigma_Features
     Wait Until Page Contains Element          ${Auto_HR_feature}      20
     Element Should Be Visible     ${Auto_HR_feature}
@@ -246,7 +298,7 @@ CY_Watch_Control_Feature
     Click Element                  ${Quick_Reply_feature}
     Wait Until Page Contains Element         ${Enable/Disable_QuickReply}   20
     Click Element              ${Enable/Disable_QuickReply}
-     ${element}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Done_buttton}    10
+     ${element}=    Run Keyword And Return Status     Wait Until Element Is Visible     ${Done_buttton}    10
     IF    '${element}'=='True'
         Wait Until Page Contains Element        ${Done_buttton}   20
         Click Element           ${Done_buttton}
@@ -269,8 +321,16 @@ CY_Watch_Control_Feature
         Wait Until Page Contains Element          ${Enable/Disable_QuickReply}      20
         Click Element             ${Enable/Disable_QuickReply}
     END
+    sleep     2
     Wait Until Page Contains Element        ${Manage_quick_reply_option}        20
     Click Element           ${Manage_quick_reply_option}
+    ${toast}=     Run Keyword And Return Status      Wait Until Element Is Visible       ${Busy_text}    10
+    IF    '${toast}'=='False'
+        Wait Until Page Contains Element          ${Enable/Disable_QuickReply}      20
+        Click Element             ${Enable/Disable_QuickReply}
+        Wait Until Page Contains Element        ${Manage_quick_reply_option}        20
+        Click Element           ${Manage_quick_reply_option}
+    END
     Sleep    5
     Wait Until Page Contains Element            ${Busy_text}    20
     Element Should Be Visible         ${Driving_text}
@@ -287,13 +347,15 @@ CY_Watch_Control_Feature
 #    Click Element              ${Back_arrow}
 #    Wait Until Page Contains Element        ${Quick_reply_Discard_Save}      20
 #    Click Element        ${Quick_reply_Discard_Save}
+    ${battery_element} =    Run Keyword And Return Status    Wait Until Element Is Visible    ${Battery_Saver_Feature}     10
+    IF    '${battery_element}' == 'True'
 
-    Wait Until Page Contains Element         ${Battery_Saver_Feature}      20
-    Click Element     ${Battery_Saver_Feature}
-    Wait Until Page Contains Element       ${Battery_Saver_Standard_Mode}     10
-    Wait Until Page Contains Element       ${Battery_Saver_Advanced_Mode}     10
-    Wait Until Page Contains Element       ${Back_arrow}     20
-    Click Element      ${Back_arrow}
+         Click Element     ${Battery_Saver_Feature}
+         Wait Until Page Contains Element       ${Battery_Saver_Standard_Mode}     10
+         Wait Until Page Contains Element       ${Battery_Saver_Advanced_Mode}     10
+         Wait Until Page Contains Element       ${Back_arrow}     20
+         Click Element      ${Back_arrow}
+    END
     Wait Until Page Contains Element        ${Lift_View_Arrow}     20
     Click Element          ${Lift_View_Arrow}
     Wait Until Page Contains Element       ${Enable/Disable_Lift_View}       20
@@ -321,6 +383,7 @@ CY_Watch_Control_Feature
     #Wait Until Page Contains Element          ${Xtend_pro_watch_name}      20
     Wait Until Page Contains Element         ${Back_arrow}     20
     Click Element       ${Back_arrow}
+
 JL_Watch_Control_Feature
     Wait Until Page Contains Element         ${Watch_control_feature}         20
     Click Element        ${Watch_control_feature}

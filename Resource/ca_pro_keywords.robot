@@ -228,7 +228,7 @@ Verify_Sedentary_Reminder_Feature
     Sleep    5
     Wait Until Page Contains Element     ${Sedentary_Save}           20
     Click Element                       ${Sedentary_Save}
-    Wait Until Page Contains Element         ${Ok_button}      20
+    Wait Until Page Contains Element         ${Ok_button}      30
     Click Element            ${Ok_button}
 
 Verify_Custom_reminder_feature
@@ -382,7 +382,8 @@ Verify_Find_My_Watch_Feature
     Click Element         ${Find_watch_feature}
     Wait Until Page Contains Element               ${Save_button}   20
     Click Element        ${Save_button}
-#    Element Should Be Visible         ${Find_watch_text}       10
+    sleep     4
+    Element Should Be Visible         ${Find_watch_text}       10
     Wait Until Page Contains Element               ${Save_button}     20
     Click Element        ${Save_button}
     Wait Until Page Contains Element         ${Back_arrow}     10
@@ -420,6 +421,31 @@ Verify_Weather_Feature
       Wait Until Page Contains Element      ${Ok_button}    10
       Click Element        ${Ok_button}
     END
+
+verify_navigation_feature
+    Wait Until Element Is Visible    ${Navigation}    10
+    Click Element    ${Navigation}
+    Wait Until Element Is Visible    com.coveiot.android.boat:id/btnOk     10
+    Click Element    com.coveiot.android.boat:id/btnOk
+    Sleep    4
+    Wait Until Element Is Visible    com.coveiot.android.boat:id/ivButton    10
+    Click Element    com.coveiot.android.boat:id/ivButton
+    Wait Until Element Is Visible    com.coveiot.android.boat:id/switch_audio    20
+    Click Element    com.coveiot.android.boat:id/switch_audio
+    Wait Until Element Is Visible    com.coveiot.android.boat:id/switch_haptic    20
+    Click Element    com.coveiot.android.boat:id/switch_haptic
+    Wait Until Element Is Visible   com.coveiot.android.boat:id/switch_navigation_always_on_display    10
+    Click Element    com.coveiot.android.boat:id/switch_navigation_always_on_display
+    Sleep    3
+    Wait Until Element Is Visible     com.coveiot.android.boat:id/btnSaveNavigationSettings    20
+    Click Element    com.coveiot.android.boat:id/btnSaveNavigationSettings
+    Sleep    2
+    Wait Until Element Is Visible    ${Ok_button}    20
+    Click Element    ${Ok_button}
+    Sleep    2
+    Wait Until Element Is Visible    ${Back_arrow}    10
+    Click Element    ${Back_arrow}
+
 
 Verify_Notification_Feature
     Wait Until Page Contains Element          ${Notification_feature}    10
@@ -589,6 +615,52 @@ CA_Xtend/Storm/StormProCall_My_Watch_Page
    Click Element                            ${Back_arrow}
    Sleep        8
    Scroll              ${BT_calling_text_option}            ${watch_face_option}
+   Wait Until Page Contains Element        ${Activity700_text}      20
+#  Wait Until Page Contains Element         ${CosmosProwatch_feature}        20
+
+
+SC3+_Mywatch
+    Wait Until Page Contains Element      ${MyWatch_Icon}     20
+   Click Element                         ${MyWatch_Icon}
+   #Wait Until Page Contains Element          ${watch_name_textin_mywatch_tab}     20
+   Wait Until Page Contains Element        ${BT_status_text}       20
+   #Element Should Contain Text      ${watch_name_text}      Cosmos Pro
+#   Element Should Be Visible          ${Cosmos_watchface}
+   Element Should Be Visible          ${BT_status_text}
+   Element Should Be Visible          ${Battery_status_text}
+   Element Should Be Visible         ${Sync_status_text}
+   Element Should Be Visible         ${BT_call_status_text}
+#   Element Should Be Visible         ${Watch_Settings_option}
+
+   Wait Until Page Contains Element          ${watch_face_option}     20
+   Click Element         ${watch_face_option}
+   Wait Until Page Contains Element         ${Cloud_watch_option}     20
+   Wait Until Page Contains Element          ${Default_watch_option}    20
+   Wait Until Page Contains Element        ${Back_arrow}       20
+   Click Element                 ${Back_arrow}
+   Wait Until Element Is Visible    com.coveiot.android.boat:id/clSOSettings    20
+   Click Element    com.coveiot.android.boat:id/clSOSettings
+   Wait Until Page Contains Element        ${Back_arrow}       20
+   Click Element                 ${Back_arrow}
+   Scroll           com.coveiot.android.boat:id/clSOSettings             ${BT_status_text}
+   Wait Until Page Contains Element          ${Watch_Settings_option1}          20
+   Click Element           ${Watch_Settings_option1}
+   Wait Until Page Contains Element         ${Watch_Settings_option1}        20
+   Click Element         ${MyWatch_Icon}
+   Scroll           com.coveiot.android.boat:id/clSOSettings             ${BT_status_text}
+   Sleep          8
+   Wait Until Page Contains Element         ${find_my_watch_text}        20
+   Click Element                            ${find_my_watch_text}
+   Wait Until Page Contains Element         ${find_my_watch_text1}        20
+   Wait Until Page Contains Element         ${Back_arrow}      20
+   Click Element                            ${Back_arrow}
+   Wait Until Page Contains Element         ${BT_calling_text_option}        20
+   Click Element                            ${BT_calling_text_option}
+   Wait Until Page Contains Element         ${Calling_text}        20
+   Wait Until Page Contains Element         ${Back_arrow}     20
+   Click Element                            ${Back_arrow}
+   Sleep        8
+   Scroll              ${BT_calling_text_option}           com.coveiot.android.boat:id/clSOSettings
    Wait Until Page Contains Element        ${Activity700_text}      20
 #  Wait Until Page Contains Element         ${CosmosProwatch_feature}        20
 

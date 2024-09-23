@@ -121,6 +121,7 @@ ${qr_tray}        //android.widget.TextView[@text="QR Tray"]
 ${BT_calling__feature}    //android.widget.TextView[@text="Bluetooth calling"]
 ${Find_watch_feature}    //android.widget.TextView[@text="Find my watch"]
 ${Weather_feature}    //android.widget.TextView[@text="Weather settings"]
+${Navigation}         //android.widget.TextView[@resource-id="com.coveiot.android.boat:id/settings_name" and @text="Turn-by-turn navigation"]
 ${Notification_feature}     //android.widget.TextView[@text="Notifications"]
 ${sos_feature}            //android.widget.TextView[@text="Emergency SOS settings"]
 
@@ -344,7 +345,7 @@ ${Cult_fit_headder}            com.coveiot.android.boat:id/tvCultFitHeader
 
 #Profile
 ${User_Name}             com.coveiot.android.boat:id/tv_name
-${Contact_Number}        //android.widget.TextView[@text="+919108271345"]
+${Contact_Number}        //android.widget.TextView[@text="+917829190451"]
 ${View_Profile_Option}    com.coveiot.android.boat:id/tv_view_profile
 ${My_Goals_Headder}               com.coveiot.android.boat:id/tv_my_goals
 ${Steps_Goal_Text}        //android.widget.TextView[@text="Steps"]
