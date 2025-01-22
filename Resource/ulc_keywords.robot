@@ -4,7 +4,6 @@ Resource     ../Resource/locators.robot
 Resource     ../TestData/Deviceinfo.robot
 Resource     ../Resource/keywords.robot
 
-
 *** Keywords ***
 ULC_WavePlay_Pairing
     Wait Until Page Contains Element     ${Search_bar}            20

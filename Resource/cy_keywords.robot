@@ -7,10 +7,6 @@ Resource     ../Resource/keywords.robot
 *** Keywords ***
 
 CY_LunarCallPro_Pairing
-    ${ele}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${System_Persmission1}    10
-    IF    '${ele}'=='True'
-          Click Element    ${System_Persmission1}
-    END
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Lunar Call Pro
     Wait Until Page Contains Element       ${Lunar_Call_Pro_Watch_In_List}       40
@@ -19,6 +15,7 @@ CY_LunarCallPro_Pairing
     Click Element      ${Search_Submit_button}
     Wait Until Page Contains Element     ${Lunar_Call_Pro_Watch_ID}          40
     Click Element       ${Lunar_Call_Pro_Watch_ID}
+    sleep    5
     CY_LunarCallPro_Try_Again_Pairing
     Sleep    3
     BT_Pair_Pop_UP
@@ -53,10 +50,6 @@ Ultima_prism_Pairing
     END
 
 SC3+_Pairing
-    ${ele}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${System_Persmission1}    10
-    IF    '${ele}'=='True'
-          Click Element    ${System_Persmission1}
-    END
     Wait Until Page Contains Element     ${Search_bar}            20
     Input Text        ${Search_bar}         Storm Call 3 PLus
     Wait Until Page Contains Element       ${SC3+_Watch_In_List}       40
@@ -75,6 +68,29 @@ SC3+_Pairing
     Click Element         ${Get_Started_button}
     sleep    5
      ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   40
+    IF    '${element_visible}'=='True'
+        Click Element    ${Contiue_HomePage_button}
+    END
+    
+oasis_Pairing
+    Wait Until Page Contains Element     ${Search_bar}            20
+    Input Text        ${Search_bar}         Lunar Oasis
+    Wait Until Page Contains Element       ${oasis_Watch_In_List}       40
+    Click Element     ${oasis_Watch_In_List}
+    Wait Until Page Contains Element    ${Search_Submit_button}       40
+    Click Element      ${Search_Submit_button}
+    Wait Until Element Is Visible    com.coveiot.android.boat:id/scanQR    10
+    Click Element    com.coveiot.android.boat:id/scanQR
+    Wait Until Page Contains Element     ${oasis_Watch_ID}         40
+    Click Element       ${oasis_Watch_ID}
+    sleep    5
+    oasis_Try_Again_Pairing
+    Sleep    3
+    BT_Pair_Pop_UP
+    Wait Until Page Contains Element    ${Get_Started_button}        40
+    Click Element         ${Get_Started_button}
+    sleep    5
+    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   40
     IF    '${element_visible}'=='True'
         Click Element    ${Contiue_HomePage_button}
     END
@@ -141,6 +157,14 @@ SC3+_Try_Again_Pairing
        Click Element      ${Try_Agian_For_Pair}
        Wait Until Page Contains Element      ${SC3+_Watch_ID}        20
        Click Element       ${SC3+_Watch_ID}
+    END
+
+oasis_Try_Again_Pairing
+   ${ElementVisible}=     Run Keyword And Return Status       Wait Until Page Contains Element        ${Try_Agian_For_Pair}           10
+    IF   '${ElementVisible}' == 'True'
+       Click Element      ${Try_Agian_For_Pair}
+       Wait Until Page Contains Element      ${oasis_Watch_ID}       20
+       Click Element       ${oasis_Watch_ID}
     END
 
 Opp5_jeili_Try_Again_Pairing
@@ -214,6 +238,27 @@ Verify_CY_Features
     Element Should Be Visible     ${Weather_feature}
     Element Should Be Visible     ${Notification_feature}
     Scroll        ${Alarm_feature}                  ${Notification_feature}
+Verify_oasis_Features
+    Wait Until Page Contains Element          ${Auto_activity_feature}      20
+    Element Should Be Visible     ${Auto_activity_feature}
+    Element Should Be Visible     ${Auto_HR_feature}
+    Element Should Be Visible     ${Auto_Stress&HRV_feature}
+    Element Should Be Visible     ${Nightly_breathing_feature}
+#    Element Should Be Visible     ${Female_Wellness_feature}
+    Element Should Be Visible     ${Alarm_feature}
+    Element Should Be Visible     ${qr_tray}
+    Element Should Be Visible    ${Custom_reminder}
+    Element Should Be Visible     ${Sedentary_reminder_feature}
+    Scroll          ${Custom_reminder}           ${Auto_activity_feature}
+    Element Should Be Visible     ${Nudges_feature}
+    Element Should Be Visible    ${sos_feature}
+    Element Should Be Visible    ${Navigation}
+    Element Should Be Visible     ${BT_calling__feature}
+    Element Should Be Visible     ${Find_watch_feature}
+    Element Should Be Visible     ${Weather_feature}
+    Element Should Be Visible     ${Notification_feature}
+    Scroll        ${Alarm_feature}                  ${Notification_feature}
+
 Verify_opp3_Features
     Wait Until Page Contains Element          ${Auto_HR_feature}      20
     Element Should Be Visible     ${Auto_HR_feature}
@@ -349,7 +394,6 @@ CY_Watch_Control_Feature
 #    Click Element        ${Quick_reply_Discard_Save}
     ${battery_element} =    Run Keyword And Return Status    Wait Until Element Is Visible    ${Battery_Saver_Feature}     10
     IF    '${battery_element}' == 'True'
-
          Click Element     ${Battery_Saver_Feature}
          Wait Until Page Contains Element       ${Battery_Saver_Standard_Mode}     10
          Wait Until Page Contains Element       ${Battery_Saver_Advanced_Mode}     10
@@ -376,6 +420,21 @@ CY_Watch_Control_Feature
     Click Element          ${OK_popup}
     Wait Until Page Contains Element         ${Ok_button}    20
     Click Element        ${Ok_button}
+    ${3H_button_element} =     Run Keyword And Return Status    Wait Until Element Is Visible    com.coveiot.android.boat:id/cl_customise_4h_button     10
+    IF    '${3H_button_element}' == 'True'
+        Click Element    com.coveiot.android.boat:id/cl_customise_4h_button
+        sleep    3
+        Element Should Be Visible    //android.widget.TextView[@text="Personalise your journey with the customisable 3H Button"]
+        Wait Until Element Is Visible    //android.widget.RadioButton[@resource-id="com.coveiot.android.boat:id/rbtn_items" and @text="SOS"]      10
+        Click Element        //android.widget.RadioButton[@resource-id="com.coveiot.android.boat:id/rbtn_items" and @text="SOS"]
+        Wait Until Element Is Visible      //android.widget.RadioButton[@resource-id="com.coveiot.android.boat:id/rbtn_items" and @text="Power off / Restart"]      10
+        Click Element        //android.widget.RadioButton[@resource-id="com.coveiot.android.boat:id/rbtn_items" and @text="Power off / Restart"]
+        Wait Until Element Is Visible     com.coveiot.android.boat:id/btnSave     10
+        Click Element    com.coveiot.android.boat:id/btnSave
+        Sleep    2
+        Wait Until Element Is Visible    com.coveiot.android.boat:id/positive_btn    10
+        Click Element    com.coveiot.android.boat:id/positive_btn
+    END
     Wait Until Page Contains Element      ${Back_arrow}     20
     Click Element      ${Back_arrow}
     Wait Until Page Contains Element         ${About_watch}     20

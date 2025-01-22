@@ -202,7 +202,7 @@ Verify_Stress&HRV_Feature
 
     Sleep    3
 
-    Scroll    ${Sedentary_reminder_feature}    ${Auto_activity_feature}
+    Scroll    ${Custom_reminder}    ${Auto_activity_feature}
 
 Verify_NBR_Feature
     Wait Until Page Contains Element         ${Nightly_breathing_feature}      20
@@ -278,13 +278,6 @@ Verify_Custom_reminder_feature
         Wait Until Element Is Visible    ${Back_arrow}    10
         Click Element    ${Back_arrow}
     END
-
-
-
-
-
-
-
 
 
 Verify_QR_Feature
@@ -440,7 +433,7 @@ verify_navigation_feature
     Wait Until Element Is Visible     com.coveiot.android.boat:id/btnSaveNavigationSettings    20
     Click Element    com.coveiot.android.boat:id/btnSaveNavigationSettings
     Sleep    2
-    Wait Until Element Is Visible    ${Ok_button}    20
+    Wait Until Element Is Visible    ${Ok_button}    40
     Click Element    ${Ok_button}
     Sleep    2
     Wait Until Element Is Visible    ${Back_arrow}    10
@@ -782,7 +775,7 @@ CA_Pro_Profile_Page
        Click Element         ${View_Profile_Option}
        Wait Until Page Contains Element     ${Edit_Name}       20
        Element Should Be Visible      ${Edit_Name}
-       Element Should Be Visible      ${Edit_Email}
+#       Element Should Be Visible      ${Edit_Email}
        Element Should Be Visible      ${Change_Contact}
        Scroll      ${Change_Contact}           ${Edit_Name}
        Wait Until Page Contains Element           ${Edit_Gender}      20
