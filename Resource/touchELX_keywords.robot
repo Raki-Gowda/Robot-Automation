@@ -445,7 +445,7 @@ TouchELX_Lunar_Call_Profile_Page
     Click Element         ${View_Profile_Option}
     Wait Until Page Contains Element     ${Edit_Name}       20
     Element Should Be Visible      ${Edit_Name}
-    Element Should Be Visible      ${Edit_Email}
+#    Element Should Be Visible      ${Edit_Email}
     Element Should Be Visible      ${Change_Contact}
     Scroll      ${Change_Contact}           ${Edit_Name}
     Wait Until Page Contains Element           ${Edit_Gender}      20

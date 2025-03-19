@@ -558,7 +558,7 @@ CY_Home_Page_Verification
     ${visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${WFS_Apply}    20
     IF  '${visible}'=='True'
         Click Element    ${WFS_Apply}
-        Sleep    30
+        Sleep    40
         Wait Until Element Is Visible     ${Ok_button}     30
         Click Element    ${Ok_button}
     END

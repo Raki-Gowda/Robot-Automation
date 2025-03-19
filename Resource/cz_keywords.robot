@@ -1,7 +1,6 @@
 *** Settings ***
 Library      AppiumLibrary
-#Resource     locators.robot
-Resource     Qy_KeyWorks.robot
+Resource     locators.robot
 Resource     ../TestData/Deviceinfo.robot
 Resource     ../Resource/keywords.robot
 

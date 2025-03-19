@@ -34,7 +34,7 @@ ${XtendSport_watch_ID}         //android.widget.TextView[@text="XTENDSPORT_A740"
 #WAVE PRO Device Details
 ${WavePro_Watch_Name}       Wave Pro
 ${WavePro_Watch_In_List}     //android.widget.TextView[@text="Wave Pro"]
-${WavePro_watch_ID}         //android.widget.TextView[@text="WAVEPRO_DE3A"]
+${WavePro_watch_ID}         //android.widget.TextView[@text="WAVEPRO_6437"]
 
 #WAVE PRO Device Details
 ${WavePrime_Watch_Name}       Wave Prime
@@ -49,7 +49,7 @@ ${WavePlay_watch_ID}         //android.widget.TextView[@text="WAVEPLAY_8F1D"]
 #ULC Wave Beat Device Details
 ${WaveBeat_Watch_Name}       Wave Beat
 ${WaveBeat_Watch_In_List}     //android.widget.TextView[@text="Wave Beat"]
-${WaveBeat_watch_ID}         //android.widget.TextView[@text="WAVEBEAT_8C38"]
+${WaveBeat_watch_ID}         //android.widget.TextView[@text="WAVEBEAT_1664"]
 
 #ULC Wave Style Device Details
 ${WaveStyle_Watch_Name}       Wave Style
@@ -142,7 +142,7 @@ ${Ultima_Prism_Watch_ID}          //android.widget.TextView[@text="PRISM_9D4E"]
 #JL Device Details
 ${JL_Sigma_Watch_Name}            Wave Sigma
 ${JL_Sigma_Watch_In_List}      //android.widget.TextView[@text="Wave Sigma"]
-${JL_Sigma_Watch_ID}          //android.widget.TextView[@text="SIGMA_C3EB"]
+${JL_Sigma_Watch_ID}          //android.widget.TextView[@text="SIGMA_918C"]
 
 #Opp3 Device Details
 ${SC3+_Watch_Name}           Storm Call 3 Plus
