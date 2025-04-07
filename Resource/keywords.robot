@@ -318,7 +318,7 @@ Verify_Sleep_Vitals
    Wait Until Page Contains Element         ${Close_ShareCard}   20
    Click Element                            ${Close_ShareCard}
 
-Verify_HR_Vitals
+Verify_HR_Vitals_welness
    ##Heart Rate
    Wait Until Page Contains Element          ${Heart_rate_text}      10
    Click Element        ${Heart_rate_text}
@@ -526,3 +526,178 @@ Logout_Function
   Click Element        ${Ok_button}
 
   Wait Until Element Is Visible    ${System_Persmission1}    10
+
+#Wellness
+
+Verify_Welness_page_details
+      Wait Until Element Is Visible      ${wellness_icon}      10
+      Click Element        ${wellness_icon}
+      Sleep    5
+      @{firstFinger}  create list  ${197} ${700}
+      Tap with Positions  ${1000}  @{firstFinger}
+      Element Should Be Visible     ${wellness_moment}
+      Element Should Be Visible     ${wellness_vitals}
+      Element Should Be Visible    ${wellness_restore}
+Verify_Steps_Wellness
+   ##Steps
+   #Days
+   Wait Until Page Contains Element        ${Days_tab}      20
+   Click Element         ${Days_tab}
+   Wait Until Page Contains Element         ${Share_Icon}  20
+   Click Element        ${Share_Icon}
+   Sleep      4
+   Wait Until Page Contains Element         ${Cove_logo}      20
+   Wait Until Page Contains Element         ${Powerd_by_covetext}       20
+   Wait Until Page Contains Element         ${desclimer_text}    20
+   Wait Until Page Contains Element         ${Share_button}        20
+   Wait Until Page Contains Element         ${Close_ShareCard}  20
+   Click Element                            ${Close_ShareCard}
+   #Week
+   Wait Until Page Contains Element         ${Week_text}       20
+   Click Element                            ${Week_text}
+   Wait Until Page Contains Element         ${Share_Icon}  20
+   Click Element                            ${Share_Icon}
+   Sleep      4
+   Wait Until Page Contains Element         ${Cove_logo}      20
+   Wait Until Page Contains Element         ${Powerd_by_covetext}       20
+   Wait Until Page Contains Element         ${desclimer_text}     20
+   Wait Until Page Contains Element         ${Share_button}       20
+   Wait Until Page Contains Element         ${Close_ShareCard}    20
+   Click Element                            ${Close_ShareCard}
+   #Month
+   Wait Until Page Contains Element         ${Month_text}       20
+   Click Element                            ${Month_text}
+   Wait Until Page Contains Element         ${Share_Icon}  20
+   Click Element                            ${Share_Icon}
+   Sleep      4
+   Wait Until Page Contains Element         ${Cove_logo}     20
+   Wait Until Page Contains Element         ${Powerd_by_covetext}       20
+   Wait Until Page Contains Element         ${desclimer_text}      20
+   Wait Until Page Contains Element         ${Share_button}       20
+   Wait Until Page Contains Element         ${Close_ShareCard}     20
+   Click Element                            ${Close_ShareCard}
+
+
+verify_activities_wellness
+    Wait Until Element Is Visible    ${activities_moment_wellness}     10
+    Click Element    ${activities_moment_wellness}
+
+verify_vitals_wellness
+    Wait Until Element Is Visible        ${wellness_vitals}
+    Click Element    ${wellness_vitals}
+
+Verify_HR_Vitals
+   ##Heart Rate
+   Wait Until Page Contains Element         ${Days_tab}     20
+   Click Element         ${Days_tab}
+   Wait Until Page Contains Element         ${Share_Icon}   20
+   Click Element        ${Share_Icon}
+   Sleep      8
+   Wait Until Page Contains Element         ${Cove_logo}       20
+   Wait Until Page Contains Element         ${Powerd_by_covetext}       20
+   Wait Until Page Contains Element         ${desclimer_text}    20
+   Wait Until Page Contains Element         ${Share_button}      20
+   Wait Until Page Contains Element         ${Close_ShareCard}    20
+   Click Element                            ${Close_ShareCard}
+   #Week
+   Wait Until Page Contains Element         ${Week_text}       20
+   Click Element                            ${Week_text}
+   Wait Until Page Contains Element         ${Share_Icon}  20
+   Click Element                            ${Share_Icon}
+   Sleep      8
+   Wait Until Page Contains Element        ${Cove_logo}      20
+   Wait Until Page Contains Element         ${Powerd_by_covetext}        20
+   Wait Until Page Contains Element         ${desclimer_text}      20
+   Wait Until Page Contains Element         ${Share_button}       20
+   Wait Until Page Contains Element        ${Close_ShareCard}    20
+   Click Element                           ${Close_ShareCard}
+   #Month
+   Wait Until Page Contains Element         ${Month_text}        20
+   Click Element                            ${Month_text}
+   Wait Until Page Contains Element          ${Share_Icon}   20
+   Click Element                             ${Share_Icon}
+   Sleep      8
+   Wait Until Page Contains Element         ${Cove_logo}      20
+   Wait Until Page Contains Element         ${Powerd_by_covetext}     20
+   Wait Until Page Contains Element         ${desclimer_text}    20
+   Wait Until Page Contains Element         ${Share_button}       20
+   Wait Until Page Contains Element        ${Close_ShareCard}    20
+   Click Element                           ${Close_ShareCard}
+
+Verify_SPO2_vitals_welness
+   ##SPO2
+   Wait Until Page Contains Element          ${SPO2_text}      20
+   Click Element       ${SPO2_text}
+
+   Wait Until Page Contains Element       ${Share_Icon}   20
+   Click Element        ${Share_Icon}
+   Sleep      4
+   Wait Until Page Contains Element         ${Cove_logo}     20
+   Wait Until Page Contains Element         ${Powerd_by_covetext}       20
+   Wait Until Page Contains Element         ${desclimer_text}      20
+   Wait Until Page Contains Element         ${Share_button}    20
+   Wait Until Page Contains Element         ${Close_ShareCard}    20
+   Click Element                           ${Close_ShareCard}
+   Wait Until Page Contains Element          ${SPO2_text}     20
+
+Verify_Energy_Meter_Vitals_wellness
+   ##Energy_Meter
+   Wait Until Page Contains Element          ${Energy_meter_text}          20
+   Click Element        ${Energy_meter_text}
+
+   Wait Until Page Contains Element         ${Share_Icon}  20
+   Click Element        ${Share_Icon}
+   Sleep      4
+   Wait Until Page Contains Element        ${Cove_logo}      20
+   Wait Until Page Contains Element         ${Powerd_by_covetext}       20
+   Wait Until Page Contains Element         ${desclimer_text}     20
+   Wait Until Page Contains Element         ${Share_button}      20
+   Wait Until Page Contains Element        ${Close_ShareCard}    20
+   Click Element                           ${Close_ShareCard}
+
+verify_Restore_wellness
+  Wait Until Element Is Visible     ${wellness_restore}      10
+  Click Element      ${wellness_restore}
+
+
+Verify_Sleep_Vitals_Wellness
+  ##Sleep
+   Wait Until Page Contains Element          ${Sleep_text}      10
+   Click Element       ${Sleep_text}
+   #Day
+   Wait Until Page Contains Element         ${Days_tab}      20
+   Click Element         ${Days_tab}
+   Wait Until Page Contains Element        ${Share_Icon}  20
+   Click Element        ${Share_Icon}
+   Sleep      4
+   Wait Until Page Contains Element         ${Cove_logo}      20
+   Wait Until Page Contains Element         ${Powerd_by_covetext}      20
+   Wait Until Page Contains Element        ${desclimer_text}    20
+   Wait Until Page Contains Element        ${Share_button}       20
+   Wait Until Page Contains Element         ${Close_ShareCard}    20
+   Click Element                            ${Close_ShareCard}
+   #Week
+   Wait Until Page Contains Element        ${Week_text}       20
+   Click Element                            ${Week_text}
+   Wait Until Page Contains Element         ${Share_Icon}  20
+   Click Element                            ${Share_Icon}
+   Sleep      4
+   Wait Until Page Contains Element        ${Cove_logo}      20
+   Wait Until Page Contains Element        ${Powerd_by_covetext}      20
+   Wait Until Page Contains Element         ${desclimer_text}      20
+   Wait Until Page Contains Element        ${Share_button}      20
+   Wait Until Page Contains Element         ${Close_ShareCard}     20
+   Click Element                            ${Close_ShareCard}
+   #Month
+   Wait Until Page Contains Element         ${Month_text}      20
+   Click Element                           ${Month_text}
+   Wait Until Page Contains Element         ${Share_Icon}   20
+   Click Element                            ${Share_Icon}
+   Sleep      4
+   Wait Until Page Contains Element         ${Cove_logo}      20
+   Wait Until Page Contains Element         ${Powerd_by_covetext}     20
+   Wait Until Page Contains Element         ${desclimer_text}    20
+   Wait Until Page Contains Element         ${Share_button}      20
+   Wait Until Page Contains Element         ${Close_ShareCard}   20
+   Click Element                            ${Close_ShareCard}
+

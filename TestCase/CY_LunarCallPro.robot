@@ -47,17 +47,15 @@ CY_Lunar_Call_Pro_Verify_Notification_Feature
 CY_Lunar_Call_Pro_Verify_Watch_Control_Features
    CY_Watch_Control_Feature
 CY_Lunar_Call_Pro_Fitness_Vitals_Page
-   Fitness_Page_Vitals_Details
-   Verify_Steps_Vitals
-   Verify_Sleep_Vitals
-   Verify_HR_Vitals
-   Verify_SPO2_Vitals
-   Sleep        5
-   Scroll     ${SPO2_text}            ${Steps_Option}
-   Verify_Stress_Level_Vitals
-   Verify_HRV_Vitals
-   Verify_NBR_Vitals
-   Verify_Energy_Meter_Vitals
+     Verify_Welness_page_details
+     Verify_Steps_Wellness
+     verify_activities_wellness
+     verify_vitals_wellness
+     Verify_HR_Vitals_welness
+     Verify_SPO2_vitals_welness
+     Verify_Energy_Meter_Vitals_wellness
+     verify_Restore_wellness
+     Verify_Sleep_Vitals_Wellness
 CY_Lunar_Call_Pro_Fitness_Plan
     Fitness_Page_Fitness
 #    Fitness_Plan_Page
