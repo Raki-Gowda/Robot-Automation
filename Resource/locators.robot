@@ -1,7 +1,16 @@
 *** Settings ***
 Library     AppiumLibrary
 
+
+
 *** Variables ***
+#Wellness
+${wellness_icon}                   com.coveiot.android.boat:id/fragmentHealth
+${wellness_moment}              //android.widget.TextView[@text="Movement"]
+${wellness_vitals}             //android.widget.TextView[@text="Vitals"]
+${wellness_restore}           //android.widget.TextView[@text="Restore"]
+${activities_moment_wellness}            //android.widget.TextView[@resource-id="com.coveiot.android.boat:id/tvWellnessTitle" and @text="Activities"]
+
 ${Latest_App_Version}      3.6.6(287)       # This verison need to update based on recent app version
 #Login and Pair device variable
 ${Skip_button}             com.coveiot.android.boat:id/textViewSkip
@@ -436,3 +445,6 @@ ${Day4_Text}                      //android.widget.TextView[@text="Day 4"]
 ${Schedule_Text}                      //android.widget.TextView[@text="Schedule"]
 ${Unsubscribe_Plan_Button}                      //android.widget.Button[@text="Unsubscribe plan"]
 ${Unsubscribe_Plan_Confirmation_Button}                      //android.widget.TextView[@text="Unsubscribe"]
+
+
+

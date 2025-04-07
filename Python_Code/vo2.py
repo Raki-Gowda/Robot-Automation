@@ -24,7 +24,7 @@ def roundoff_M(dist,time):
 
 roundoff_KM(1.76,12.01)
 
-roundoff_KM(1.09,12.01)
+roundoff_M(1.09,12.01)
 
 
 vo2_km(1.76)

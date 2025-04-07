@@ -44,7 +44,7 @@ Ultima_prism_Pairing
     BT_Pair_Pop_UP
     Wait Until Page Contains Element    ${Get_Started_button}        40
     Click Element         ${Get_Started_button}
-     ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
+    ${element_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${Contiue_HomePage_button}   30
     IF    '${element_visible}'=='True'
         Click Element    ${Contiue_HomePage_button}
     END
@@ -683,3 +683,7 @@ CY_Home_Page_Scroll_And_Verify
        Scroll      ${Challenges_Headder}       ${Cult_fit_headder}
        Wait Until Page Contains Element     ${Best_Offers_headder}     10
     END
+
+
+
+wellness
